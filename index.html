@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Tag Manager Example</title>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T8B88HBS');</script>
-<!-- End Google Tag Manager --> 
+    <!-- Google Tag Manager -->
+    <script src="gtm.js"></script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
     <h1>GitHub Page</h1>
@@ -18,10 +14,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p>Key2: <div id="key2"></div></p>
 
     <script>
-        // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
-        var keyValues = dataLayer();
-        document.getElementById("key1").innerText = keyValues.key1;
-        document.getElementById("key2").innerText = keyValues.key2;
+        window.addEventListener('load', function() {
+            // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
+            var keyValues = dataLayer();
+            document.getElementById("key1").innerText = keyValues.key1;
+            document.getElementById("key2").innerText = keyValues.key2;
+        });
     </script>
 </body>
 </html>
