@@ -4,20 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Tag Manager Example</title>
-    <!-- Google Tag Manager -->
-    <script src="gtm.js"></script>
-    <!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T8B88HBS');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8B88HBS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
     <h1>GitHub Page</h1>
     <p>Key1: <div id="key1"></div></p>
     <p>Key2: <div id="key2"></div></p>
 
-    <script>
-            var keyValues = dataLayer();
-            document.getElementById("key1").innerText = keyValues.key1;
-            document.getElementById("key2").innerText = keyValues.key2;
-       
-    </script>
+<script>  
+  // Function to get query parameter value  
+  function getQueryParameter(name) {  
+    const urlParams = new URLSearchParams(window.location.search);  
+    return urlParams.get(name);  
+  }  
+  
+  // Get the values of key1 and key2  
+  const key1Value = getQueryParameter('key1');  
+  const key2Value = getQueryParameter('key2');  
+  
+  // Display the values in the page  
+  if (key1Value && key2Value) {  
+    const displayDiv = document.createElement('div');  
+    displayDiv.innerHTML = `<p>Key1: ${key1Value}</p><p>Key2: ${key2Value}</p>`;  
+    document.body.appendChild(displayDiv);  
+  } else {  
+    console.warn('One or both query parameters are missing.');  
+  }  
+</script>
 </body>
 </html>
