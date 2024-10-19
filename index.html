@@ -20,6 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script>
         // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
         var keyValues = KeyValues();
+        console.log(666+keyValues);
         document.getElementById("key1").innerText = keyValues.key1;
         document.getElementById("key2").innerText = keyValues.key2;
     </script>
