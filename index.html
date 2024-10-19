@@ -16,14 +16,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8B88HBS"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    
+<!-- End Google Tag Manager (noscript) -->    
     <h1>GitHub Page</h1>
-    <p>Key1: <div id="key1"></div></p>
-    <p>Key2: <div id="key2"></div></p>
 
 <script>  
-  // Function to get query parameter value  
+  // get query url parameter value  
   function getQueryParameter(name) {  
     const urlParams = new URLSearchParams(window.location.search);  
     return urlParams.get(name);  
@@ -34,13 +31,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const key2Value = getQueryParameter('key2');  
   
   // Display the values in the page  
-  if (key1Value && key2Value) {  
     const displayDiv = document.createElement('div');  
     displayDiv.innerHTML = `<p>Key1: ${key1Value}</p><p>Key2: ${key2Value}</p>`;  
     document.body.appendChild(displayDiv);  
-  } else {  
-    console.warn('One or both query parameters are missing.');  
-  }  
+    
 </script>
 </body>
 </html>
