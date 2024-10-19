@@ -14,15 +14,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
     <h1>GitHub Page</h1>
-    <p>Key1: <div id="key1"></div></p>
-    <p>Key2: <div id="key2"></div></p>
+<!-- 假设你已经在Google标签管理器中设置了名为 "urlParams" 的自定义变量 -->
+<div id="keyValues">
+  Key1: <div id="key1"></div><br>
+  Key2: <div id="key2"></div>
+</div>
 
-    <script>
-        // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
-        var keyValue = KeyValues();
-        console.log(666+keyValues);
-        document.getElementById("key1").innerText = keyValue.key1;
-        document.getElementById("key2").innerText = keyValue.key2;
-    </script>
+<script>
+  // 获取自定义变量的值
+  var params = {{urlParams}};
+  
+  // 将值插入到HTML元素中
+  document.getElementById("key1").textContent = params.key1 || 'N/A';
+  document.getElementById("key2").textContent = params.key2 || 'N/A';
+</script>
+
 </body>
 </html>
