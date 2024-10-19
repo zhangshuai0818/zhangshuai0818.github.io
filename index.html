@@ -14,12 +14,10 @@
     <p>Key2: <div id="key2"></div></p>
 
     <script>
-        window.addEventListener('load', function() {
-            // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
             var keyValues = dataLayer();
             document.getElementById("key1").innerText = keyValues.key1;
             document.getElementById("key2").innerText = keyValues.key2;
-        });
+       
     </script>
 </body>
 </html>
