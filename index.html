@@ -16,5 +16,16 @@
         gtag('js', new Date());
         gtag('config', 'GTM-T8B88HBS');
     </script>
+    <script>
+    function displayKeys() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const key1 = urlParams.get('key1');
+        const key2 = urlParams.get('key2');
+        document.getElementById('key1').textContent = 'Key1: ' + key1;
+        document.getElementById('key2').textContent = 'Key2: ' + key2;
+    }
+    window.addEventListener('load', displayKeys);
+</script>
+
 </body>
 </html>
