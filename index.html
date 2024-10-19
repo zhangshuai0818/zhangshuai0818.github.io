@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Keys from URL</title>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
 
+        function displayKeys() {
+            var key1 = getParameterByName('key1');
+            var key2 = getParameterByName('key2');
+            document.getElementById('key1').innerText = 'Key1: ' + key1;
+            document.getElementById('key2').innerText = 'Key2: ' + key2;
+        }
+    </script>
+</head>
+<body onload="displayKeys()">
+    <p id="key1"></p>
+    <p id="key2"></p>
+</body>
+</html>
