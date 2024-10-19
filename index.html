@@ -13,21 +13,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager --> 
 </head>
 <body>
-    <h1>Key Value Display</h1>
-    <p id="key1"></p>
-    <p id="key2"></p>
+    <h1>GitHub Page</h1>
+    <p>Key1: <div id="key1"></div></p>
+    <p>Key2: <div id="key2"></div></p>
 
     <script>
- function displayKeys() {
-  var key1 = dataLayer[0].key1; 
-  var key2 = dataLayer[1].key2; 
-
-        // 在页面上显示这些值
-        document.getElementById('key1').innerText = 'Key1: ' + params.key1;
-        document.getElementById('key2').innerText = 'Key2: ' + params.key2;
-}
-window.addEventListener('load', displayKeys);
-
+        // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
+        var keyValues = dataLayer();
+        document.getElementById("key1").innerText = keyValues.key1;
+        document.getElementById("key2").innerText = keyValues.key2;
     </script>
 </body>
 </html>
