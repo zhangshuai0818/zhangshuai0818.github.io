@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Tag Manager Example</title>
+  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-T8B88HBS');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Page</title>
+<!-- End Google Tag Manager --> 
 </head>
 <body>
-    <h1>GitHub Page</h1>
-<!-- 假设你已经在Google标签管理器中设置了名为 "urlParams" 的自定义变量 -->
-<div id="keyValues">
-  Key1: <div id="key1"></div><br>
-  Key2: <div id="key2"></div>
-</div>
+    <h1>Key Value Display</h1>
+    <p id="key1"></p>
+    <p id="key2"></p>
 
-<script>
-  // 获取自定义变量的值
-var params = dataLayer[0].urlParams;
-  // 将值插入到HTML元素中
-  document.getElementById("key1").textContent = params.key1 || 'N/A';
-  document.getElementById("key2").textContent = params.key2 || 'N/A';
-</script>
+    <script>
+        // 获取 URL 中的查询字符串参数
+        function getQueryParams() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return {
+                key1: urlParams.get('key1'),
+                key2: urlParams.get('key2')
+            };
+        }
 
+        // 从 URL 中提取 key1 和 key2 的值
+        const params = getQueryParams();
+
+        // 将提取到的值存储到自定义变量中
+        dataLayer.push({
+            event: 'urlParams',
+            key1: params.key1,
+            key2: params.key2
+        });
+
+        // 在页面上显示这些值
+        document.getElementById('key1').innerText = 'Key1: ' + params.key1;
+        document.getElementById('key2').innerText = 'Key2: ' + params.key2;
+    </script>
 </body>
 </html>
