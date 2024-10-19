@@ -27,17 +27,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 key2: urlParams.get('key2')
             };
         }
-
-        // 从 URL 中提取 key1 和 key2 的值
         const params = getQueryParams();
-
         // 将提取到的值存储到自定义变量中
         dataLayer.push({
-            event: 'urlParams',
+            event: 'KeyValues',
             key1: params.key1,
             key2: params.key2
         });
-
         // 在页面上显示这些值
         document.getElementById('key1').innerText = 'Key1: ' + params.key1;
         document.getElementById('key2').innerText = 'Key2: ' + params.key2;
