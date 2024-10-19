@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>GitHub Page</title>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T8B88HBS');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
-    <h1>Keys from URL</h1>
-    <p id="key1"></p>
-    <p id="key2"></p>
-    <script src="https://www.googletagmanager.com/gtag/js?id=GTM-T8B88HBS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-T8B88HBS');
-    </script>
-    <script>
-    function displayKeys() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const key1 = urlParams.get('key1');
-        const key2 = urlParams.get('key2');
-        document.getElementById('key1').textContent = 'Key1: ' + key1;
-        document.getElementById('key2').textContent = 'Key2: ' + key2;
-    }
-    window.addEventListener('load', displayKeys);
-</script>
+    <h1>GitHub Page</h1>
+    <p>Key1: <div id="key1"></div></p>
+    <p>Key2: <div id="key2"></div></p>
 
+    <script>
+        // 假设你已经在GTM中创建了一个名为"KeyValues"的自定义JavaScript变量，并且它包含了上面的getKeyValues函数
+        var keyValues = KeyValues();
+        document.getElementById("key1").innerText = keyValues.key1;
+        document.getElementById("key2").innerText = keyValues.key2;
+    </script>
 </body>
 </html>
